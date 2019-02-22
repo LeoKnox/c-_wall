@@ -1,0 +1,14 @@
+@model Message
+
+<form asp-action="postmessage" asp-controller="Wall" method="post">
+    <span asp-validation-for="MyMessage"></span>
+    <label asp-for="MyMessage"></label>
+    <input asp-for="MyMessage"><br>
+    <button>Post a Message</button>
+</form>
+
+@foreach (var mess in @Model.currentMessages) {
+    <p>@mess.MyMessage</p>
+}
+
+<a href="logoff">log off</a>
